@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabela ICMS 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div>
+        <h1>Tabela ICMS 2026</h1>
+        <p class="subtitle">Selecione a UF de origem e a UF de destino para consultar as alíquotas.</p>
+      </div>
+
+      <label class="theme-toggle" for="themeToggle">
+        <input id="themeToggle" type="checkbox">
+        <span class="toggle-track" aria-hidden="true">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span>Modo escuro</span>
+      </label>
+    </header>
+
+    <section class="top-panel">
+      <div class="controls" aria-label="Seleção de origem e destino">
+        <label for="origem">
+          Origem
+          <select id="origem"></select>
+        </label>
+        <label for="destino">
+          Destino
+          <select id="destino"></select>
+        </label>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result-box">
+          <div class="result-title">Alíquota interna na UF destino</div>
+          <div class="result-value" id="aliquotaInterna">-</div>
+          <div class="result-detail" id="detalheInterna">Escolha uma UF de destino.</div>
+        </div>
+        <div class="result-box">
+          <div class="result-title">Alíquota interestadual das UFs envolvidas</div>
+          <div class="result-value" id="aliquotaInterestadual">-</div>
+          <div class="result-detail" id="detalheInterestadual">Escolha origem e destino.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="table-shell">
+      <table id="icmsTable" aria-label="Matriz ICMS 2026"></table>
+    </div>
+
+    <div class="legend">
+      <span><i class="dot interestadual"></i> Origem + destino</span>
+      <span><i class="dot interna"></i> Interna do destino</span>
+      <span><i class="dot diagonal"></i> UF com ela mesma</span>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
